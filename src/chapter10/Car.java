@@ -1,38 +1,38 @@
 package chapter10;
 
 public class Car implements CarbonFootPrint {
-	private double litersPerKilometer;
-	private double kilometers;
-	
-	public Car(int l, int k) {
-		this.setLitersPerKilometer(l);
-		this.setKilometers(k);
-	}
+    private double litersPerKilometer;
+    private double kilometers;
 
-	public double getLitersPerKilometer() {
-		return litersPerKilometer;
-	}
+    public Car(int l, int k) {
+        this.setLitersPerKilometer(l);
+        this.setKilometers(k);
+    }
 
-	public void setLitersPerKilometer(double litersPerKilometer) {
-		this.litersPerKilometer = litersPerKilometer;
-	}
+    public double getLitersPerKilometer() {
+        return litersPerKilometer;
+    }
 
-	public double getKilometers() {
-		return kilometers;
-	}
+    public void setLitersPerKilometer(double litersPerKilometer) {
+        this.litersPerKilometer = litersPerKilometer;
+    }
 
-	public void setKilometers(double kilometers) {
-		this.kilometers = kilometers;
-	}
+    public double getKilometers() {
+        return kilometers;
+    }
 
-	@Override
-	public double getCarbonFootPrint() {
-		return getLitersPerKilometer() * getKilometers();
-	}
-	
-	@Override
-	public String toString() {
-		return String.format("Car with %.2f l/k roading %.2f kilometers",
-				this.getLitersPerKilometer(), this.getKilometers());
-	}
+    public void setKilometers(double kilometers) {
+        this.kilometers = kilometers;
+    }
+
+    @Override
+    public double getCarbonFootPrint() {
+        return getLitersPerKilometer() * getKilometers();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Car with %.2f l/k roading %.2f kilometers",
+                this.getLitersPerKilometer(), this.getKilometers());
+    }
 }
