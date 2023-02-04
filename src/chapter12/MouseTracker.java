@@ -1,6 +1,6 @@
 
 
-ckage chapter12;
+package chapter12;
 
 import java.awt.EventQueue;
 
