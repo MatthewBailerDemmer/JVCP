@@ -12,4 +12,5 @@ public class BorderLayoutDemo {
         borderLayoutFrame.setSize(300, 200);
         borderLayoutFrame.setVisible(true);
     }
+    
 }
