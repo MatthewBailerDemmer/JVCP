@@ -18,7 +18,7 @@ public class CreateTextFile {
     public static void openFile(){
 
         try{
-            output = new Formatter("clients.txt");
+            output = new Formatter("D:\\JVCP\\src\\chapter14\\clients.txt");
         }catch(SecurityException securityException){
             System.err.println("Write permission denied. Terminating");
             System.exit(1);
@@ -33,9 +33,14 @@ public class CreateTextFile {
         System.out.printf("%s%n%s%n?",
                 "Enter account number, first name, last name and balance",
                 "Enter end-of_life indicator to end input.");
+        Boolean flagZ = true;
 
-        while(input.hasNext()){ // faz um loop até o indicador de fim de arquivo
+        while(flagZ){ // faz um loop até o indicador de fim de arquivo
             try {
+                if (input.nextInt() == 1){//Only because InteliJ does not reconize end-of-file-indicator
+                    // the right input will be, as an example 0 100 Bob Blue 24,98
+                    break;
+                }
                 output.format("%d %s %s %.2f%n", input.nextInt(),
                         input.next(), input.next(), input.nextDouble());
             }catch(FormatterClosedException formatterClosedException){
@@ -45,6 +50,7 @@ public class CreateTextFile {
                 System.err.println("Invalid input. Please try again");
                 input.nextLine();
             }
+
             System.out.print("? ");
         }
     }
